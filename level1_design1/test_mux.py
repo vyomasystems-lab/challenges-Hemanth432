@@ -80,6 +80,6 @@ async def test_mux(dut):
 
         await Timer(2, units='ns')
         
-        dut._log.info(f'A={A:02} B={B:02} model={A+B:02} DUT={int(dut.out.value):02}')
+        dut._log.info(f'sel={sel:05} inp0={inp0:02} inp1={inp1:02} inp2={inp2:02} inp3={inp3:02} inp4={inp4:02} inp5={inp5:02} inp6={inp6:02} inp7={inp7:02} inp8={inp8:02} inp9={inp9:02} inp10={inp10:02} inp11={inp11:02} inp12={inp12:02} inp13={inp13:02} inp14={inp14:02} inp15={inp15:02} inp16={inp16:02} inp17={inp17:02} inp18={inp18:02} inp19={inp19:02} inp20={inp20:02} inp21={inp21:02} inp22={inp22:02} inp23={inp23:02} inp24={inp24:02} inp25={inp25:02} inp26={inp26:02} inp27={inp27:02} inp28={inp28:02} inp29={inp29:02} inp30={inp30:02} model={A+B:02} DUT={int(dut.out.value):02}')
         assert dut.out.value == A+B, "Randomised test failed with: {A} + {B} = {OUT}".format(
             A=dut.a.value, B=dut.b.value, SUM=dut.out.value)
