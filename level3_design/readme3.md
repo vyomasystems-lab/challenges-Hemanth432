@@ -32,7 +32,8 @@ implemented using verilog.
 
 
 ## Reference Circuit Diagram
-![image](https://user-images.githubusercontent.com/93421069/181905789-395ceff8-4878-4c91-ade7-44e8af2237bd.jpg)
+![circuit](https://user-images.githubusercontent.com/93421069/181908340-45d01ba0-f8e6-4baa-8959-01d75dee2573.jpg)
+
 ## Reference Truth Table
 ![image](https://user-images.githubusercontent.com/93421069/181906870-49cab5ad-b8a5-4055-abc5-80aba594fdf2.jpg)
 )
