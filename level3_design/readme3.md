@@ -75,7 +75,7 @@ Python is a programming language. Python can be used on a server to create web a
 https://www.python.org/
 
 ## Verilog Code
-![image](https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg)
+https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg
 
 ## Python test file 
 ```
@@ -214,15 +214,16 @@ async def test_alu_s15(dut):
                    
 ```
 ## Test cases passed and failed
-![image](![Screenshot (401)](https://user-images.githubusercontent.com/93421069/181907942-dc56c998-4389-48ed-93b8-c01a0362b464.png)
-)
+![Screenshot (401)](https://user-images.githubusercontent.com/93421069/181907942-dc56c998-4389-48ed-93b8-c01a0362b464.png)
+
 
 ## Buggy Verilog code
 We can observe that in line 15 b[2] is replaced with b[3].
 
-![image](![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png))
+![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png)
 ## Outputs of test cases passed and failed
-![image](![Screenshot (404)](https://user-images.githubusercontent.com/93421069/181908010-b56ec4b2-3003-45b2-9a27-51e346e82e4b.png))
+So, The failed cases shows the bugs.
+![Screenshot (404)](https://user-images.githubusercontent.com/93421069/181908010-b56ec4b2-3003-45b2-9a27-51e346e82e4b.png)
 
 ## Acknowlegdements
 1. Vyoma SystemsFOSSEE, IIT Bombay
