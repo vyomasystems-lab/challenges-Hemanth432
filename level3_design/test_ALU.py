@@ -45,6 +45,19 @@ async def test_alu_a3(dut):
                     await Timer(2, units='ns')
                     dut._log.info(f'a=3 b={b:04} ci=0 M=1 s=0  OUT={int(dut.y.value):04}')
                     assert dut.y.value == 12, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+
+@cocotb.test()
+async def test_alu_s2(dut):
+        for a in range(16):
+            for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 2         
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=2 OUT={int(dut.y.value):04}')
+                    assert dut.y.value == (~a)&b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)
 @cocotb.test()
 async def test_alu_s3(dut):
         for a in range(16):
@@ -58,6 +71,54 @@ async def test_alu_s3(dut):
                     dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=3 OUT={int(dut.y.value):04}')
                     assert dut.y.value == 0, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)
 @cocotb.test()
+async def test_alu_s7(dut):
+        for a in range(16):
+            for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 7        
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=7 OUT={int(dut.y.value):04}')
+                    assert dut.y.value == a&(~b), "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+@cocotb.test()
+async def test_alu_s10(dut):
+    for a in range(16):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 10           
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=10  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+@cocotb.test()
+async def test_alu_s11(dut):
+    for a in range(16):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 11           
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=11  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == a&b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value) 
+@cocotb.test()
+async def test_alu_s14(dut):
+    for a in range(1):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 14            
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=14  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == a+b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+@cocotb.test()
 async def test_alu_s15(dut):
     for a in range(16):
         for b in range(16):
@@ -68,4 +129,5 @@ async def test_alu_s15(dut):
                     dut.s.value = 15            
                     await Timer(2, units='ns')
                     dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=15  OUT={int(dut.y.value):04}')
-                    assert dut.y.value == a, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+                    assert dut.y.value == a, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value) 
+                   
