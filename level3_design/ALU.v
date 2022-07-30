@@ -1,4 +1,5 @@
-module alu74181(
+// See LICENSE.vyoma for details
+module ALU(
   input [3:0]s,
   input ci, M,
   input [3:0] a, b,
@@ -24,4 +25,4 @@ module alu74181(
     y[2] = (p[2] ^ g[2]) ^ ~((~ci & ~M & g[0] & g[1]) | (~M & p[1]) | (~M & p[0] & g[1]));
     y[3] = (p[3] ^ g[3]) ^ ~((~ci & ~M & g[0] & g[1] & g[2]) | (~M & p[2]) | (~M & p[1] & g[2]) | (~M & p[0] & g[1] & g[2]));
     end
-endmodule // alu74181
+endmodule
