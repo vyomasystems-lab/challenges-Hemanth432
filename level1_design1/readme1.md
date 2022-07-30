@@ -419,40 +419,17 @@ async def test_mux_inp30(dut):
   </testsuite>
 </testsuites>
 ```
-## Test cases
+## Test cases analysis
+I have found three bugs.As we can see the figure.
 ![Screenshot (405)](https://user-images.githubusercontent.com/93421069/181906319-2a0fbb72-e3e6-4b22-96cc-c982f68a1b7a.png)
 
-## GAW Plots
-![image](https://user-images.githubusercontent.com/93421069/157199313-04d774cc-8efb-47e7-a59b-ddc357910b30.jpg)
-## Steps to run generate NgVeri Model
-1. Open eSim
-2. Run NgVeri-Makerchip 
-3. Add top level verilog file in Makerchip Tab
-4. Click on NgVeri tab
-5. Add dependency files
-6. Click on Run Verilog to NgSpice Converter
-7. Debug if any errors
-8. Model created successfully
-## Steps to run this project
-1. Open a new terminal
-2. Clone this project using the following command:</br>
-```git clone https://github.com/Hemanth432?tab=repositories ```</br>
-3. Change directory:</br>
-```cd https://github.com/Hemanth432/Mixed-Signal-simulation-Hackathon ```</br>
-4. Run ngspice:</br>
-```ngspice johnson_amv_hemanth.cir.out```</br>
-5. To run the project in eSim:
-
-  - Run eSim</br>
-  - Load the project</br>
-  - Open eeSchema</br>
 ## Acknowlegdements
 1. FOSSEE, IIT Bombay
-2. Steve Hoover, Founder, Redwood EDA
+2. Vyoma Systems
 3. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 4. Sumanto Kar, eSim Team, FOSSEE
 
 ## References
-1. Website: "https://www.reddit.com/r/AskElectronics/comments/f7ubt4/astable_multivibrator_schmitt_trigger_johnson/" 
+1. Basics of Digital Electronics 
 
 
