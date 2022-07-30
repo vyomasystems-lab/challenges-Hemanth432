@@ -424,10 +424,12 @@ I have found three bugs.As we can see the figure.
 ![Screenshot (405)](https://user-images.githubusercontent.com/93421069/181906319-2a0fbb72-e3e6-4b22-96cc-c982f68a1b7a.png)
 
 ## Acknowlegdements
-1. FOSSEE, IIT Bombay
-2. Vyoma Systems
-3. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
-4. Sumanto Kar, eSim Team, FOSSEE
+1. Vyoma SystemsFOSSEE, IIT Bombay
+2. FOSSEE, IIT Bombay
+3. IIT Madras
+4. NIELIT
+5. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
+6. Sumanto Kar, eSim Team, FOSSEE
 
 ## References
 1. Basics of Digital Electronics 
