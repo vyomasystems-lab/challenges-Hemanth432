@@ -18,76 +18,65 @@
 - [Acknowlegdements](#acknowlegdements)
 - [References](#references)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 ## Abstract
-Ring counters are used to
-count the data in a continuous loop.
-Astable multivibrators are also known as
-Free-running Multivibrator as they do not
-require any additional inputs or external
-assistance to oscillate. From the Astable
-Multivibrator, the squarewave output is
-given to the Johnson counter. In this way,
-we implement the Johnson counter with
-the help of the Astable Multivibrator.
+The 74181 chip is important because of its key role in
+minicomputer history. Before the microprocessor era,
+minicomputers built their processors from boards of
+individual chips. A key part of the processor was the
+arithmetic/logic unit (ALU), which performed
+arithmetic operations (addition, subtraction) and
+logical operations (AND, OR, XOR).The 74181
+implements a 4-bit ALU providing 16 logic functions
+and 16 arithmetic functions.This circuit is
+implemented using verilog.
+
 
 ## Reference Circuit Diagram
-![image](https://user-images.githubusercontent.com/93421069/157207336-95d44d3f-1c05-490b-ae0d-7b1a8789ab79.jpg)
-## Reference Waveform
-![image](https://user-images.githubusercontent.com/93421069/157208248-74939048-05c9-41a7-844a-62a3ba550d86.png)
+![image](https://user-images.githubusercontent.com/93421069/181905789-395ceff8-4878-4c91-ade7-44e8af2237bd.jpg)
+## Reference Truth Table
+![image](https://user-images.githubusercontent.com/93421069/181906870-49cab5ad-b8a5-4055-abc5-80aba594fdf2.jpg)
+)
 ## Circuit Details
-As shown in circuit diagram Figure 1, we
-have an astable multivibrator. It also
-includes a Johnson counter connected.
-From the astable multivibrator, we get
-the squarewave output which can be used
-as the clock input.
-The squarewave used as clock input is
-given to the johnson counter. We are
-getting the output from the overall circuit
-as shown in Figure 2. The advantage of
-the circuit is that we can observe the
-outputs of the astable multivibrator and
-johnson counter. It can be used as a
-multipurpose circuit.
+Texas Instruments introduced the 74181 Arithmetic /
+Logic Unit (ALU) chip, which put a full 4-bit ALU on
+one fast TTL chip. This chip provided 32 arithmetic
+and logic functions, as well as carry lookahead for
+high performance.The 74181 implements a 4-bit
+ALU providing 16 logic functions and 16 arithmetic
+functions. As well as the expected addition,
+subtraction, and Boolean operations, there are
+some bizarre functions such as "(A + B) PLUS
+AB".So there are 2^4 = 16 possible functions.
+Extend these to 4 bits, and these are exactly the 16
+logic functions of the 74181, from trivial 0 and 1 to
+expected logic like A AND B to contrived operations
+like NOT A AND B. These 16 functions are selected
+by the S0-S3 select inputs.The circuit diagram is
+shown in Figure 1.The expected outputs or the truth
+table is shown in Figure 2
 </br>
-## Truth Table
 
-| States | Qa | Qb | Qc | Qd|
-| ------------- | ------------- | ------------- | ------------- |------------|
-| 1 | 0 | 0  | 0 |0|
-| 2  | 1 | 0| 0|0|
-| 3  | 1 |1|0|0|
-| 4 | 1 |1|1|0|
-| 5 | 1|1|1|1|
-|6 |0|1|1|1|
-|7|0|0|1|1|
-|8|0|0|0|1|
 ## Software Used
-### eSim
-It is an Open Source EDA developed by FOSSEE, IIT Bombay. It is used for electronic circuit simulation. It is made by the combination of two software namely NgSpice and KiCAD.
+### Vyoma's UpTickPro
+It is an python based verification tool made by Vyoma Systems.
 </br>
 For more details refer:
 </br>
-https://esim.fossee.in/home
-### NgSpice
-It is an Open Source Software for Spice Simulations. For more details refer:
+https://vyomasystems.com/
+### Gitpod
+Gitpod provides a Theia IDE using VS Code as editor who’s contents it keeps track of. It provides a full operating system environment to run code developed there.
 </br>
-http://ngspice.sourceforge.net/docs.html
-### Makerchip
-It is an Online Web Browser IDE for Verilog/System-verilog/TL-Verilog Simulation. Refer
-</br> https://www.makerchip.com/
-### Verilator
-It is a tool which converts Verilog code to C++ objects. Refer:
-https://www.veripool.org/verilator/
+https://www.gitpod.io/
+### Github
+GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside 36 million developers.
+</br> https://github.com/
+### python
+Python is a programming language. Python can be used on a server to create web applications
+https://www.python.org/
 
-## Circuit Diagram in eSim
-The following is the schematic in eSim:
-![image](https://user-images.githubusercontent.com/93421069/157199306-16170f62-50a6-42df-a930-14f112a9167c.jpg)
 ## Verilog Code
-![image](https://user-images.githubusercontent.com/93421069/157201419-303a4949-bf9a-4f82-a192-06b1726ea696.jpg)
+![image](![Screenshot (402)](https://user-images.githubusercontent.com/93421069/181906940-513beb71-f32a-480f-8b21-c522b2a1def0.png)
+)
 )
 ## Makerchip
 ```
