@@ -5,10 +5,10 @@
 - [Reference Truth Table](#reference-truthtable)
 - [Circuit Details](#circuit-details)
 - [Software Used](#software-used)
-  * [Vyoma's UpTickPro](#Vyoma's UpTickPro)
-  * [Gitpod](#Gitpod)
-  * [Github](#Github)
-  * [python](#python)
+  * Vyoma's UpTickPro(#Vyoma's UpTickPro)
+  * Gitpod(#Gitpod)
+  * Github(#Github)
+  * python(#python)
 - [Verilog Code](#verilog-code)
 - [Python test file](#Vyoma's UpTickPro)
 - [Test cases passed and failed](#Vyoma's UpTickPro)
@@ -75,7 +75,8 @@ Python is a programming language. Python can be used on a server to create web a
 https://www.python.org/
 
 ## Verilog Code
-![image](![Screenshot (402)](https://user-images.githubusercontent.com/93421069/181906940-513beb71-f32a-480f-8b21-c522b2a1def0.png)
+![image](![Screenshot (401)](https://user-images.githubusercontent.com/93421069/181907633-3d6ae4b4-982f-4449-a3db-0b023b15b207.png)
+)
 )
 )
 ## Makerchip
