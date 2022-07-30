@@ -77,41 +77,163 @@ https://www.python.org/
 ## Verilog Code
 ![image](https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg)
 
-## Netlists
-![image]((https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg))
-## NgSpice Plots
-![image](![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png))
-## GAW Plots
-![image](https://user-images.githubusercontent.com/93421069/157199313-04d774cc-8efb-47e7-a59b-ddc357910b30.jpg)
-## Steps to run generate NgVeri Model
-1. Open eSim
-2. Run NgVeri-Makerchip 
-3. Add top level verilog file in Makerchip Tab
-4. Click on NgVeri tab
-5. Add dependency files
-6. Click on Run Verilog to NgSpice Converter
-7. Debug if any errors
-8. Model created successfully
-## Steps to run this project
-1. Open a new terminal
-2. Clone this project using the following command:</br>
-```git clone https://github.com/Hemanth432?tab=repositories ```</br>
-3. Change directory:</br>
-```cd https://github.com/Hemanth432/Mixed-Signal-simulation-Hackathon ```</br>
-4. Run ngspice:</br>
-```ngspice johnson_amv_hemanth.cir.out```</br>
-5. To run the project in eSim:
+## Python test file 
+```
+# See LICENSE.vyoma for details
+import cocotb
+from cocotb.triggers import Timer
+@cocotb.test()
+async def test_alu_a0(dut):
+    for a in range(1):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 0            
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=0  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == 15, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)
+@cocotb.test()
+async def test_alu_a1(dut):
+        for b in range(16):
+                    dut.a.value = 1
+                    dut.b.value = b
+                    dut.M.value = 1
+                    dut.s.value = 0            
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a=1 b={b:04} ci=0 M=1 s=0  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == 14, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)
+@cocotb.test()
+async def test_alu_a2(dut):
+        for b in range(16):
+                    dut.a.value = 2
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 0            
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a=2 b={b:04} ci=0 M=1 s=0  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == 13, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)
+@cocotb.test()
+async def test_alu_a3(dut):
+        for b in range(16):
+                    dut.a.value = 3
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 0            
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a=3 b={b:04} ci=0 M=1 s=0  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == 12, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
 
-  - Run eSim</br>
-  - Load the project</br>
-  - Open eeSchema</br>
+@cocotb.test()
+async def test_alu_s2(dut):
+        for a in range(16):
+            for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 2         
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=2 OUT={int(dut.y.value):04}')
+                    assert dut.y.value == (~a)&b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)
+@cocotb.test()
+async def test_alu_s3(dut):
+        for a in range(16):
+            for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 3         
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=3 OUT={int(dut.y.value):04}')
+                    assert dut.y.value == 0, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)
+@cocotb.test()
+async def test_alu_s7(dut):
+        for a in range(16):
+            for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 7        
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=7 OUT={int(dut.y.value):04}')
+                    assert dut.y.value == a&(~b), "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+@cocotb.test()
+async def test_alu_s10(dut):
+    for a in range(16):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 10           
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=10  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+@cocotb.test()
+async def test_alu_s11(dut):
+    for a in range(16):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 11           
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=11  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == a&b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value) 
+@cocotb.test()
+async def test_alu_s14(dut):
+    for a in range(1):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 14            
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=14  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == a+b, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value)                    
+@cocotb.test()
+async def test_alu_s15(dut):
+    for a in range(16):
+        for b in range(16):
+                    dut.a.value = a
+                    dut.b.value = b
+                    dut.ci.value =0
+                    dut.M.value = 1
+                    dut.s.value = 15            
+                    await Timer(2, units='ns')
+                    dut._log.info(f'a={a:04} b={b:04} ci=0 M=1 s=15  OUT={int(dut.y.value):04}')
+                    assert dut.y.value == a, "Test failed with: {a} {b} {ci} {M} {s} = {y}".format(a=dut.a.value,b=dut.b.value,ci=dut.ci.value,M=dut.M.value, s=dut.s.value, y = dut.y.value) 
+                   
+```
+## Test cases passed and failed
+![image](![Screenshot (401)](https://user-images.githubusercontent.com/93421069/181907942-dc56c998-4389-48ed-93b8-c01a0362b464.png)
+)
+
+## Buggy Verilog code
+We can observe that in line 15 b[2] is replaced with b[3].
+
+![image](![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png))
+## Outputs of test cases passed and failed
+![image](![Screenshot (404)](https://user-images.githubusercontent.com/93421069/181908010-b56ec4b2-3003-45b2-9a27-51e346e82e4b.png))
+
 ## Acknowlegdements
-1. FOSSEE, IIT Bombay
-2. Steve Hoover, Founder, Redwood EDA
-3. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
-4. Sumanto Kar, eSim Team, FOSSEE
+1. Vyoma SystemsFOSSEE, IIT Bombay
+2. FOSSEE, IIT Bombay
+3. IIT Madras
+4. NIELIT
+5. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
+6. Sumanto Kar, eSim Team, FOSSEE
 
 ## References
-1. Website: "https://www.reddit.com/r/AskElectronics/comments/f7ubt4/astable_multivibrator_schmitt_trigger_johnson/" 
+1. Basics of Digital Electronics 
+
 
 
