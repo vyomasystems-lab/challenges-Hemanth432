@@ -420,7 +420,8 @@ async def test_mux_inp30(dut):
 </testsuites>
 ```
 ## Test cases
-![Screenshot (405)](https://user-images.githubusercontent.com/93421069/181906066-8ccb4b7d-d188-4982-8930-47e9450fec0b.png)
+![Screenshot (405)](https://user-images.githubusercontent.com/93421069/181906319-2a0fbb72-e3e6-4b22-96cc-c982f68a1b7a.png)
+
 ## GAW Plots
 ![image](https://user-images.githubusercontent.com/93421069/157199313-04d774cc-8efb-47e7-a59b-ddc357910b30.jpg)
 ## Steps to run generate NgVeri Model
