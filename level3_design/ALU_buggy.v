@@ -1,5 +1,5 @@
 // See LICENSE.vyoma for details
-module ALU(
+module ALU_buggy(
   input [3:0]s,
   input ci, M,
   input [3:0] a, b,
@@ -12,7 +12,7 @@ module ALU(
 
     p[0] <= ~(a[0] | (s[0] & b[0]) | (s[1] & ~b[0]));
     p[1] <= ~(a[1] | (s[0] & b[1]) | (s[1] & ~b[1]));
-    p[2] <= ~(a[2] | (s[0] & b[2]) | (s[1] & ~b[2]));
+    p[2] <= ~(a[2] | (s[0] & b[3]) | (s[1] & ~b[2]));
     p[3] <= ~(a[3] | (s[0] & b[3]) | (s[1] & ~b[3]));
 
     g[0] <= ~((a[0] & ~b[0] & s[2]) | (a[0] & b[0] & s[3]));
