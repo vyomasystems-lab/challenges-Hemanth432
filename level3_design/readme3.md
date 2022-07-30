@@ -75,10 +75,9 @@ Python is a programming language. Python can be used on a server to create web a
 https://www.python.org/
 
 ## Verilog Code
-![image](![Screenshot (401)](https://user-images.githubusercontent.com/93421069/181907633-3d6ae4b4-982f-4449-a3db-0b023b15b207.png)
+![image](![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png)
 )
-)
-)
+
 ## Makerchip
 ```
 \TLV_version 1d: tl-x.org
