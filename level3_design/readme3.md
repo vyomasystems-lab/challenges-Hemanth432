@@ -5,16 +5,16 @@
 - [Reference Truth Table](#reference-truthtable)
 - [Circuit Details](#circuit-details)
 - [Software Used](#software-used)
-  * Vyoma's UpTickPro(#Vyoma's UpTickPro)
-  * Gitpod(#Gitpod)
-  * Github(#Github)
-  * python(#python)
-- [Verilog Code](#verilog-code)
-- [Python test file](#Vyoma's UpTickPro)
-- [Test cases passed and failed](#Vyoma's UpTickPro)
-- [Python file with bugs](#Vyoma's UpTickPro)
-- [Python test file for buggy design](#Vyoma's UpTickPro)
-- [Test cases passed and failed](#Vyoma's UpTickPro)
+  * Vyoma's UpTickPro
+  * Gitpod
+  * Github
+  * python
+- [Verilog Code]
+- [Python test file]
+- [Test cases passed and failed]
+- [Python file with bugs]
+- [Python test file for buggy design]
+- [Test cases passed and failed]
 - [Acknowlegdements](#acknowlegdements)
 - [References](#references)
 
