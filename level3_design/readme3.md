@@ -75,69 +75,14 @@ Python is a programming language. Python can be used on a server to create web a
 https://www.python.org/
 
 ## Verilog Code
-![image](![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png)
-)
+![image](![org](https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg))
 
-## Makerchip
-```
-\TLV_version 1d: tl-x.org
-\SV
-/* verilator lint_off UNUSED*/  /* verilator lint_off DECLFILENAME*/  /* verilator lint_off BLKSEQ*/  /* verilator lint_off WIDTH*/  /* verilator lint_off SELRANGE*/  /* verilator lint_off PINCONNECTEMPTY*/  /* verilator lint_off DEFPARAM*/  /* verilator lint_off IMPLICIT*/  /* verilator lint_off COMBDLY*/  /* verilator lint_off SYNCASYNCNET*/  /* verilator lint_off UNOPTFLAT */  /* verilator lint_off UNSIGNED*/  /* verilator lint_off CASEINCOMPLETE*/  /* verilator lint_off UNDRIVEN*/  /* verilator lint_off VARHIDDEN*/  /* verilator lint_off CASEX*/  /* verilator lint_off CASEOVERLAP*/  /* verilator lint_off PINMISSING*/  /* verilator lint_off BLKANDNBLK*/  /* verilator lint_off MULTIDRIVEN*/  /* verilator lint_off WIDTHCONCAT*/  /* verilator lint_off ASSIGNDLY*/  /* verilator lint_off MODDUP*/  /* verilator lint_off STMTDLY*/  /* verilator lint_off LITENDIAN*/  /* verilator lint_off INITIALDLY*/  
-
-//Your Verilog/System Verilog Code Starts Here:
-///////Verilog Code Johnson COunter //////
- 
-module johnson_counter( out,reset,clk);
-input clk,reset;
-output [3:0] out;
- 
-reg [3:0] q;
- 
-always @(posedge clk)
-begin
- 
-if(reset)
- q=4'd0;
- else
- 	begin 
- 		q[3]<=q[2];
-  		q[2]<=q[1];
-  		q[1]<=q[0];
-   		q[0]<=(~q[3]);
- 	end
- end
- 
-assign out=q;  
-endmodule
- 
-//////End////
-
-
-//Top Module Code Starts here:
-	module top(input logic clk, input logic reset, input logic [31:0] cyc_cnt, output logic passed, output logic failed);
-		logic  [3:0] out;//output
-//The $random() can be replaced if user wants to assign values
-		johnson_counter johnson_counter(.clk(clk), .reset(reset), .out(out));
-	
-\TLV
-//Add \TLV here if desired                                     
-\SV
-endmodule
-
-
-
-```
 ## Makerchip Plots
 ![image](https://user-images.githubusercontent.com/93421069/157203919-81198120-0aa3-465b-b91a-b82deb184e08.jpg)
 ## Netlists
-![image](https://user-images.githubusercontent.com/93421069/157199341-a6362b3e-6954-409c-83a6-121f35dd0b9f.jpg)
+![image](![org](https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg))
 ## NgSpice Plots
-![image](https://user-images.githubusercontent.com/93421069/157198999-fd38420c-e9da-4a0c-8682-abe88fd31df5.jpg)
-![image]((https://user-images.githubusercontent.com/93421069/157199201-5630b945-6a28-4d06-8750-4d1a734e535f.jpg)
-
-![image](https://user-images.githubusercontent.com/93421069/157199144-28832168-615a-45fd-9411-6c148462b3f4.jpg)
-![image](https://user-images.githubusercontent.com/93421069/157199217-e84fa852-a6b9-4cc5-a0c7-8879969ac06a.jpg)
-![image](https://user-images.githubusercontent.com/93421069/157199231-b4149019-8bd9-4182-a643-45dc2c41fdf8.jpg)
+![image](![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png))
 ## GAW Plots
 ![image](https://user-images.githubusercontent.com/93421069/157199313-04d774cc-8efb-47e7-a59b-ddc357910b30.jpg)
 ## Steps to run generate NgVeri Model
