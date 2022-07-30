@@ -9,12 +9,12 @@
   * Gitpod
   * Github
   * python
-- [Verilog Code]
-- [Python test file]
-- [Test cases passed and failed]
-- [Python file with bugs]
-- [Python test file for buggy design]
-- [Test cases passed and failed]
+- Verilog Code
+- Python test file
+- Test cases passed and failed
+- Python file with bugs
+- Python test file for buggy design
+- Test cases passed and failed
 - [Acknowlegdements](#acknowlegdements)
 - [References](#references)
 
