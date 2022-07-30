@@ -2,113 +2,96 @@
 # Multiplexer[31:1]
 
 ## Abstract
-Multiplexer is a combinational circuit that has maximum of 2^n data inputs, ‘n’ selection lines and single output line. One of these data inputs will be connected to the output based on the values of selection lines.Since there are ‘n’ selection lines, there will be 2^n possible combinations of zeros and ones. So, each combination will select only one data input. Multiplexer is also called as Mux.
+Multiplexer is a combinational circuit that has maximum of 2^n data inputs, ‘n’ selection lines and single output line. One of these data inputs will be connected to the output based on the values of selection lines.Since there are ‘n’ selection lines, there will be 2^n possible combinations of zeros and ones. So, each combination will select only one data input. Multiplexer is also called as Mux.Here we are using the 31 input lines mux and 5 select lines.
 
-## Reference Circuit Diagram
-![image](https://user-images.githubusercontent.com/93421069/157207336-95d44d3f-1c05-490b-ae0d-7b1a8789ab79.jpg)
-## Reference Waveform
-![image](https://user-images.githubusercontent.com/93421069/157208248-74939048-05c9-41a7-844a-62a3ba550d86.png)
-## Circuit Details
-As shown in circuit diagram Figure 1, we
-have an astable multivibrator. It also
-includes a Johnson counter connected.
-From the astable multivibrator, we get
-the squarewave output which can be used
-as the clock input.
-The squarewave used as clock input is
-given to the johnson counter. We are
-getting the output from the overall circuit
-as shown in Figure 2. The advantage of
-the circuit is that we can observe the
-outputs of the astable multivibrator and
-johnson counter. It can be used as a
-multipurpose circuit.
-</br>
-## Truth Table
 
-| States | Qa | Qb | Qc | Qd|
-| ------------- | ------------- | ------------- | ------------- |------------|
-| 1 | 0 | 0  | 0 |0|
-| 2  | 1 | 0| 0|0|
-| 3  | 1 |1|0|0|
-| 4 | 1 |1|1|0|
-| 5 | 1|1|1|1|
-|6 |0|1|1|1|
-|7|0|0|1|1|
-|8|0|0|0|1|
 ## Software Used
-### eSim
-It is an Open Source EDA developed by FOSSEE, IIT Bombay. It is used for electronic circuit simulation. It is made by the combination of two software namely NgSpice and KiCAD.
+### Vyoma's UpTickPro
+It is an python based verification tool made by Vyoma Systems.
 </br>
 For more details refer:
 </br>
-https://esim.fossee.in/home
-### NgSpice
-It is an Open Source Software for Spice Simulations. For more details refer:
+https://vyomasystems.com/
+### Gitpod
+Gitpod provides a Theia IDE using VS Code as editor who’s contents it keeps track of. It provides a full operating system environment to run code developed there.
 </br>
-http://ngspice.sourceforge.net/docs.html
-### Makerchip
-It is an Online Web Browser IDE for Verilog/System-verilog/TL-Verilog Simulation. Refer
-</br> https://www.makerchip.com/
-### Verilator
-It is a tool which converts Verilog code to C++ objects. Refer:
-https://www.veripool.org/verilator/
+https://www.gitpod.io/
+### Github
+GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside 36 million developers.
+</br> https://github.com/
+### python
+Python is a programming language. Python can be used on a server to create web applications
+https://www.python.org/
 
 ## Circuit Diagram in eSim
 The following is the schematic in eSim:
 ![image](https://user-images.githubusercontent.com/93421069/157199306-16170f62-50a6-42df-a930-14f112a9167c.jpg)
 ## Verilog Code
-![image](https://user-images.githubusercontent.com/93421069/157201419-303a4949-bf9a-4f82-a192-06b1726ea696.jpg)
-)
-## Makerchip
 ```
-\TLV_version 1d: tl-x.org
-\SV
-/* verilator lint_off UNUSED*/  /* verilator lint_off DECLFILENAME*/  /* verilator lint_off BLKSEQ*/  /* verilator lint_off WIDTH*/  /* verilator lint_off SELRANGE*/  /* verilator lint_off PINCONNECTEMPTY*/  /* verilator lint_off DEFPARAM*/  /* verilator lint_off IMPLICIT*/  /* verilator lint_off COMBDLY*/  /* verilator lint_off SYNCASYNCNET*/  /* verilator lint_off UNOPTFLAT */  /* verilator lint_off UNSIGNED*/  /* verilator lint_off CASEINCOMPLETE*/  /* verilator lint_off UNDRIVEN*/  /* verilator lint_off VARHIDDEN*/  /* verilator lint_off CASEX*/  /* verilator lint_off CASEOVERLAP*/  /* verilator lint_off PINMISSING*/  /* verilator lint_off BLKANDNBLK*/  /* verilator lint_off MULTIDRIVEN*/  /* verilator lint_off WIDTHCONCAT*/  /* verilator lint_off ASSIGNDLY*/  /* verilator lint_off MODDUP*/  /* verilator lint_off STMTDLY*/  /* verilator lint_off LITENDIAN*/  /* verilator lint_off INITIALDLY*/  
+// See LICENSE.vyoma for details
 
-//Your Verilog/System Verilog Code Starts Here:
-///////Verilog Code Johnson COunter //////
- 
-module johnson_counter( out,reset,clk);
-input clk,reset;
-output [3:0] out;
- 
-reg [3:0] q;
- 
-always @(posedge clk)
-begin
- 
-if(reset)
- q=4'd0;
- else
- 	begin 
- 		q[3]<=q[2];
-  		q[2]<=q[1];
-  		q[1]<=q[0];
-   		q[0]<=(~q[3]);
- 	end
- end
- 
-assign out=q;  
-endmodule
- 
-//////End////
+module mux(sel,inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8, 
+           inp9, inp10, inp11, inp12, inp13, inp14, inp15, inp16, inp17,
+           inp18, inp19, inp20, inp21, inp22, inp23, inp24, inp25, inp26,
+           inp27, inp28, inp29, inp30, out);
 
+  input [4:0] sel;
+  input [1:0] inp0, inp1, inp2, inp3, inp4, inp5, inp6,
+            inp7, inp8, inp9, inp10, inp11, inp12, inp13, 
+            inp14, inp15, inp16, inp17, inp18, inp19, inp20,
+            inp21, inp22, inp23, inp24, inp25, inp26,
+            inp27, inp28, inp29, inp30;
 
-//Top Module Code Starts here:
-	module top(input logic clk, input logic reset, input logic [31:0] cyc_cnt, output logic passed, output logic failed);
-		logic  [3:0] out;//output
-//The $random() can be replaced if user wants to assign values
-		johnson_counter johnson_counter(.clk(clk), .reset(reset), .out(out));
-	
-\TLV
-//Add \TLV here if desired                                     
-\SV
-endmodule
+  output [1:0] out;
+  reg [1:0] out;
 
+  // Based on sel signal value, one of the inp0-inp30 gets assigned to the 
+  // output signal
+  always @(sel or inp0  or inp1 or  inp2 or inp3 or inp4 or inp5 or inp6 or
+            inp7 or inp8 or inp9 or inp10 or inp11 or inp12 or inp13 or 
+            inp14 or inp15 or inp16 or inp17 or inp18 or inp19 or inp20 or
+            inp21 or inp22 or inp23 or inp24 or inp25 or inp26 or inp27 or 
+            inp28 or inp29 or inp30 )
 
+  begin
+    case(sel)
+      5'b00000: out = inp0;  
+      5'b00001: out = inp1;  
+      5'b00010: out = inp2;  
+      5'b00011: out = inp3;  
+      5'b00100: out = inp4;  
+      5'b00101: out = inp5;  
+      5'b00110: out = inp6;  
+      5'b00111: out = inp7;  
+      5'b01000: out = inp8;  
+      5'b01001: out = inp9;  
+      5'b01010: out = inp10;
+      5'b01011: out = inp11;
+      5'b01101: out = inp12;
+      5'b01101: out = inp13;
+      5'b01110: out = inp14;
+      5'b01111: out = inp15;
+      5'b10000: out = inp16;
+      5'b10001: out = inp17;
+      5'b10010: out = inp18;
+      5'b10011: out = inp19;
+      5'b10100: out = inp20;
+      5'b10101: out = inp21;
+      5'b10110: out = inp22;
+      5'b10111: out = inp23;
+      5'b11000: out = inp24;
+      5'b11001: out = inp25;
+      5'b11010: out = inp26;
+      5'b11011: out = inp27;
+      5'b11100: out = inp28;
+      5'b11101: out = inp29;
+      default: out = 0;
+    endcase
+  end
 
+endmodule 
 ```
+
 ## Makerchip Plots
 ![image](https://user-images.githubusercontent.com/93421069/157203919-81198120-0aa3-465b-b91a-b82deb184e08.jpg)
 ## Netlists
