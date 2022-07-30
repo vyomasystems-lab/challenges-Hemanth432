@@ -75,12 +75,10 @@ Python is a programming language. Python can be used on a server to create web a
 https://www.python.org/
 
 ## Verilog Code
-![image](![org](https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg))
+![image](https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg)
 
-## Makerchip Plots
-![image](https://user-images.githubusercontent.com/93421069/157203919-81198120-0aa3-465b-b91a-b82deb184e08.jpg)
 ## Netlists
-![image](![org](https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg))
+![image]((https://user-images.githubusercontent.com/93421069/181907775-4d985e4f-eb0e-4632-b966-9e62417eaabe.jpg))
 ## NgSpice Plots
 ![image](![Screenshot (403)](https://user-images.githubusercontent.com/93421069/181907673-8172f490-6b22-4509-87be-54634c0551a7.png))
 ## GAW Plots
